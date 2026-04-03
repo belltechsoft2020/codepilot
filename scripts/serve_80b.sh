@@ -22,4 +22,4 @@ python -m vllm.entrypoints.openai.api_server \
     --host 0.0.0.0 \
     --tensor-parallel-size 1 \
     --trust-remote-code \
-    --disable-log-requests
+    --no-enable-log-requests
