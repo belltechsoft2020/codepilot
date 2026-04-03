@@ -18,7 +18,7 @@ python -m vllm.entrypoints.openai.api_server \
     --enforce-eager \
     --attention-backend FLASHINFER \
     --enable-auto-tool-choice \
-    --tool-call-parser hermes \
+    --tool-call-parser qwen3_coder \
     --port 8000 \
     --host 0.0.0.0 \
     --tensor-parallel-size 1 \
