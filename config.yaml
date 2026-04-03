@@ -1,0 +1,21 @@
+llm:
+  base_url: http://localhost:8000/v1
+  active_model: 30b
+  models:
+    30b: belltechsoft/Qwen3-Coder-30B-A3B-Instruct
+    80b: belltechsoft/Qwen3-Coder-Next
+  max_tokens: 8192
+  temperature: 0.3
+
+safety:
+  confirm_file_write: true
+  confirm_delete: true
+  command_timeout: 30
+  blocked_commands:
+    - "rm -rf /"
+    - "mkfs"
+    - "dd if="
+    - ":(){:|:&};:"
+
+agent:
+  max_iterations: 15
