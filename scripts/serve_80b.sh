@@ -16,6 +16,7 @@ python -m vllm.entrypoints.openai.api_server \
     --dtype float16 \
     --max-model-len 32768 \
     --gpu-memory-utilization 0.90 \
+    --enforce-eager \
     --enable-auto-tool-choice \
     --tool-call-parser hermes \
     --port 8000 \
