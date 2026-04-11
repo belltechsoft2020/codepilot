@@ -6,6 +6,16 @@ from dataclasses import dataclass
 import httpx
 
 
+def _sanitize(value):
+    if isinstance(value, str):
+        return value.encode("utf-8", errors="replace").decode("utf-8")
+    if isinstance(value, dict):
+        return {k: _sanitize(v) for k, v in value.items()}
+    if isinstance(value, list):
+        return [_sanitize(v) for v in value]
+    return value
+
+
 @dataclass
 class LLMResponse:
     content: str | None = None
@@ -57,8 +67,8 @@ class LLMClient:
                 })
 
         return LLMResponse(
-            content=msg.get("content"),
-            tool_calls=tool_calls,
+            content=_sanitize(msg.get("content")),
+            tool_calls=_sanitize(tool_calls),
             usage=data.get("usage"),
         )
 
