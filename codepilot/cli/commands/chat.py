@@ -73,6 +73,7 @@ def chat(model, workdir):
     while True:
         try:
             user_input = console.input("[bold green]> [/bold green]").strip()
+            user_input = user_input.encode("utf-8", errors="replace").decode("utf-8")
         except (EOFError, KeyboardInterrupt):
             console.print("\n종료합니다.")
             break
