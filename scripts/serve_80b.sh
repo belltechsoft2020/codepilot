@@ -12,8 +12,8 @@ echo "============================================================"
 
 python -m vllm.entrypoints.openai.api_server \
     --model "$MODEL" \
-    --quantization gptq \
-    --dtype float16 \
+    --quantization fp8 \
+    --dtype auto \
     --max-model-len 32768 \
     --gpu-memory-utilization 0.90 \
     --enforce-eager \
