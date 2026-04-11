@@ -12,6 +12,7 @@ echo "============================================================"
 
 python -m vllm.entrypoints.openai.api_server \
     --model "$MODEL" \
+    --served-model-name belltechsoft/Qwen3-Coder-Next \
     --quantization fp8 \
     --dtype auto \
     --max-model-len 32768 \

@@ -12,6 +12,7 @@ echo "============================================================"
 
 python -m vllm.entrypoints.openai.api_server \
     --model "$MODEL" \
+    --served-model-name belltechsoft/Qwen3-Coder-30B-A3B-Instruct \
     --dtype bfloat16 \
     --max-model-len 32768 \
     --gpu-memory-utilization 0.90 \
